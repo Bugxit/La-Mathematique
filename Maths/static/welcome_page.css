@@ -1,0 +1,44 @@
+.title{
+    font-size: 100px;
+    text-align: center;
+}
+
+.subtitle{
+    font-size: 50px;
+    margin-block-end : 0;
+}
+
+.chapters_title{
+    margin-left : 50px;
+}
+
+.red_subtitle{
+    color : red;
+    font-size : 50px;
+}
+
+.annotation{
+    font-size : 50%;
+}
+
+.text{
+    font-size: 30px;
+}
+
+li{
+    font-size : 30px;
+}
+
+
+
+a{
+    text-decoration : none;
+    font-size : 25px;
+    color : hotpink;
+}
+
+a:hover{
+    font-size : 28px;
+    color : pink;
+}
+
