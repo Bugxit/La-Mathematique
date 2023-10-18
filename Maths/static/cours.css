@@ -3,9 +3,17 @@
     text-align: center;
 }
 
+.inline{
+    display: inline;
+}
+
 .red_subtitle{
     color : red;
     font-size : 50px;
+}
+.red_text{
+    color : red;
+    font-size : 40px;
 }
 
 .annotation{
@@ -16,7 +24,32 @@
     font-size: 30px;
 }
 
+.border{
+    border-top: 100px;
+    border: dashed;
+}
+
 li{
     font-size : 30px;
 }
 
+a{
+    color : black;
+    font-size : 100px;
+}
+
+.vecteur
+{
+  position: relative;
+  display:inline-block;
+}
+
+.vecteur:after
+{
+  position: absolute;
+  display:block;
+  content:'→';
+  top:-0.5em;
+  left:-0.1em;
+  font-size: 50%;
+}
