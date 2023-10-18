@@ -1,0 +1,22 @@
+.title{
+    font-size: 100px;
+    text-align: center;
+}
+
+.red_subtitle{
+    color : red;
+    font-size : 50px;
+}
+
+.annotation{
+    font-size : 50%;
+}
+
+.text{
+    font-size: 30px;
+}
+
+li{
+    font-size : 30px;
+}
+

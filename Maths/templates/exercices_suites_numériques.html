@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='exercices.css') }}">
+</head>
+<body>
+<h2>Exercice 1 :</h2>
+<p>Quel est la raison de la suite Un ?</p>
+<p>Un+1 = Un + {{answer_ex_1}}</p>
+    <form method="POST">
+        <input name="answer_ex_1">
+        <input type="Submit">
+    </form>
+</body>
+</html>
+

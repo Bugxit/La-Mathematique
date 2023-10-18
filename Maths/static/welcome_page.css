@@ -3,40 +3,19 @@
     text-align: center;
 }
 
-.subtitle{
-    font-size: 50px;
-    margin-block-end : 0;
-}
-
-.chapters_title{
-    margin-left : 50px;
-}
-
-.red_subtitle{
-    color : red;
-    font-size : 50px;
-}
-
-.annotation{
-    font-size : 50%;
-}
-
-.text{
-    font-size: 30px;
-}
-
-li{
-    font-size : 30px;
-}
-
-a{
+.welc_page_title{
+    font-size : 100px;
     text-decoration : none;
-    font-size : 25px;
-    color : hotpink;
+    width : 100%;
+    color : black;
 }
 
-a:hover{
-    font-size : 28px;
-    color : pink;
+.welc_page_title:hover{
+    font-size : 125px;
+    color : black;
 }
 
+.welc_page_middot{
+    font-size : 250px;
+    color : black;
+}
