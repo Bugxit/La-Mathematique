@@ -8,7 +8,7 @@
     color:  #3D8DAE;
 }
 
-.subtitle{
+.subtitle1{
     font-size : 90px;
     text-decoration : none;
     width : 100%;
@@ -18,10 +18,35 @@
     transition: all 0.1s ease-in-out;
 }
 
-.subtitle:hover{
-    font-size : 105px;
+.subtitle2{
+    font-size : 90px;
+    text-decoration : none;
+    width : 100%;
+    font-family: Poppins,sans-serif;
+    color : #DBAD4A;
+    padding: 0 50px;
+    transition: all 0.1s ease-in-out;
+}
+
+.middot{
+    font-size : 300px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height: 10%;
+}
+
+.subtitle1:hover{
+    font-size : 106px;
     color : #DF8453;
     transition: all 0.1s ease-in-out;
+    padding: 0 26px;
+}
+
+.subtitle2:hover{
+    font-size : 106px;
+    color : #DF8453;
+    transition: all 0.1s ease-in-out;
+    padding: 0 13px;
 }
 
 .center {
