@@ -55,10 +55,15 @@ def exercices_derivation():
     return 'Comming soon !'
     #return render_template("exercices_derivation.html")
     
-#nombre_derive_fonction_derivee
+#applications_derivation
 @app.route("/cours/premiere/application_derivation")
 def cours_application_derivation():
     return render_template("application_derivation.html")
+
+#fonction_exponentielle
+@app.route("/cours/premiere/fonction_exponentielle")
+def cours_fonction_exponentielle():
+    return render_template("fonction_exponentielle.html")
 
 if __name__ == "__main__":
      app.run(host='0.0.0.0')

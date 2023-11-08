@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='cours.css') }}">
+</head>
+<body>
+    <h1 class="title">Chapitre 5 : La fonction exponentielle</h1>
+    <h2 class="red_subtitle"><u>I)Définition et propriétés</u></h2>
+    <span class="red_text">Théorème-définition :</span>
+    <span class="text">
+        <br>Il existe une unique fonction f définie et dérivable sur &Ropf; tel que : f(0)=1 et f'=f.
+        <br><br>La fonction ainsi définie s'appele la <strong><u>fonction exponentielle</u></strong> et on la note <strong><u>exp</u></strong>.
+        <br>On en déduit donc  que :
+    </span>
+    <ul>
+        <li>exp(0)=1</li>
+        <li>exp'= exp (exp est dérivable sur &Ropf;)</li>
+    </ul>
+    <span class="red_subtitle">Propriétés algébriques :</span>
+    <ul>
+        <li>&forall;x&isin;&Ropf;, exp(x)*exp(-x)=1<=>exp(-x)=<math><mfrac><mi>1</mi><mi>exp(x)</mi></mfrac></math></li>
+        <li>&forall;(x,y)&isin;&Ropf;<sup>2</sup>, exp(x+y)=exp(x)*exp(y)</li>
+        <li>&forall;x&isin;&Ropf;, exp(x)>0</li>
+    </ul>
+    <span class="red_text">Autre notation :</span>
+    <span class="text">On pose exp(1) = e ; e étant une constante.
+        <br>En conséquence :
+    </span>
+    <ul>
+        <li>&forall;x&isin;&Ropf;, exp(x) = e<sup>x</sup>
+        <br>Alors &forall;(x,y,n)&isin;&Ropf;<sup>2</sup>*&Nopf; :</li>
+        <li>e<sup>x+y</sup>=e<sup>x</sup>*e<sup>y</sup> ; e<sup>-x</sup>=<math><mfrac><mi>1</mi><mi>e^x</mi></mfrac></math> ; (e<sup>x</sup>)<sup>n</sup>=e<sup>x*n</sup></li>
+    </ul>
+    <h2 class="red_subtitle"><u>II)Etude de la fonction exponentielle</u></h2>
+    <span class="text">La fonction exponentielle est <strong><u>strictement croissante</u></strong> sur &Ropf; on a donc : 
+    <br>&forall;(x,y)&isin;&Ropf;<sup>2</sup>, x<y <=> e<sup>x</sup><e<sup>y</sup> ; e<sup>x</sup>=e<sup>y</sup><=>x=y
+    </span>
+    <h2 class="red_subtitle"><u>III)croissante et décroissante exponentielle :</u></h2>
+    <span class="text">Soit k &isin;&Ropf;<sup>+*</sup>:</span>
+    <ul>
+        <li>f : x &#10141; e<sup>kx</sup>, plus k est grand plus la croissante est rapide</li>
+        <li>f : x &#10141; e<sup>-kx</sup>, plus k est grand plus la décroissante est rapide</li>
+    </ul>
+
+</body>
+</html>
