@@ -24,32 +24,50 @@ def cours_suites_numeriques():
 
 @app.route("/exercices/premiere/suites_numeriques")
 def exercices_suites_numeriques():
-    global suites_numeriques_answer_1, suites_numeriques_answer_2
-    suites_numeriques_answer_1, suites_numeriques_answer_2 = randint(1,6), randint(1,6)
-    return render_template("exercices_suites_numériques.html", 
-                           answer_ex_1 = suites_numeriques_answer_1, 
-                           answer_ex_2 = suites_numeriques_answer_2)
+    global CorrectAnswerQuestion1_suites_numeriques, CorrectAnswerQuestion2_suites_numeriques
+    CorrectAnswerQuestion1_suites_numeriques, CorrectAnswerQuestion2_suites_numeriques = randint(1,16), randint(1,16)
+    return render_template(
+                           "exercices_suites_numériques.html", 
+                           CorrectAnswerQuestion1 = CorrectAnswerQuestion1_suites_numeriques, 
+                           CorrectAnswerQuestion2 = CorrectAnswerQuestion2_suites_numeriques
+                           )
 
 @app.route('/exercices/premiere/suites_numeriques', methods=['POST'])
-def check_answers_2():
-    if request.form['answer_ex_1'] != "" and int(request.form['answer_ex_1']) == suites_numeriques_answer_1:
-        suites_numeriques_gb_answer_1 = "bel et bien"
+def check_answers_suites_numeriques():
+    DidNotAnswerQuestion1_1, DidNotAnswerQuestion1_2, DidNotAnswerQuestion2_1, DidNotAnswerQuestion2_2 = "", "", "", ""
+
+    #Question 1 :
+    if request.form['POST_UserAnswerQuestion1_suites_numeriques'] == "":
+        DidNotAnswerQuestion1_1, DidNotAnswerQuestion1_2 = "n'", "pas"
+        TrueOrFalseQuestion1 = ""
+    elif request.form['POST_UserAnswerQuestion1_suites_numeriques'] == str(CorrectAnswerQuestion1_suites_numeriques):
+        TrueOrFalseQuestion1 = "bel et bien"
     else:
-        suites_numeriques_gb_answer_1 = "cepedant"
-    if request.form['answer_ex_2'] != "":
-        if int(request.form['answer_ex_2']) == suites_numeriques_answer_2:
-            suites_numeriques_gb_answer_2 = "bel et bien"
-        else:
-            suites_numeriques_gb_answer_2 = "cepedant"
+        TrueOrFalseQuestion1 = "cependant"
+
+    #Question 2 :
+    if request.form['POST_UserAnswerQuestion2_suites_numeriques'] == "":
+        DidNotAnswerQuestion2_1, DidNotAnswerQuestion2_2 = "n'", "pas"
+        TrueOrFalseQuestion2 = ""
+    elif request.form['POST_UserAnswerQuestion2_suites_numeriques'] == str(CorrectAnswerQuestion2_suites_numeriques):
+        TrueOrFalseQuestion2 = "bel et bien"
     else:
-        suites_numeriques_gb_answer_2 = "ta pas répondu... triste"
-    return render_template("answers_exercices_suites_numeriques.html",
-                           gb_answer_ex_1 = suites_numeriques_gb_answer_1,
-                           gb_answer_ex_2 = suites_numeriques_gb_answer_2, 
-                           answer_ex_1 = suites_numeriques_answer_1, 
-                           answer_ex_2 = suites_numeriques_answer_2,
-                           sent_answer_ex_1 = int(request.form['answer_ex_1']),
-                           sent_answer_ex_2 = request.form['answer_ex_2'])
+        TrueOrFalseQuestion2 = "cependant"
+
+    #Puis :
+    return render_template(
+                           "answers_exercices_suites_numeriques.html",
+                           TrueOrFalseQuestion1 = TrueOrFalseQuestion1,
+                           TrueOrFalseQuestion2 = TrueOrFalseQuestion2, 
+                           CorrectAnswerQuestion1 = CorrectAnswerQuestion1_suites_numeriques, 
+                           CorrectAnswerQuestion2 = CorrectAnswerQuestion2_suites_numeriques,
+                           UserAnswerQuestion1 = request.form['POST_UserAnswerQuestion1_suites_numeriques'],
+                           UserAnswerQuestion2 = request.form['POST_UserAnswerQuestion2_suites_numeriques'],
+                           DidNotAnswerQuestion1_1 = DidNotAnswerQuestion1_1,
+                           DidNotAnswerQuestion1_2 = DidNotAnswerQuestion1_2,
+                           DidNotAnswerQuestion2_1 = DidNotAnswerQuestion2_1,
+                           DidNotAnswerQuestion2_2 = DidNotAnswerQuestion2_2
+                           ) 
 
 #polynomes_second
 @app.route("/cours/premiere/polynomes_second")
@@ -82,4 +100,4 @@ def cours_fonction_exponentielle():
     return render_template("fonction_exponentielle.html")
 
 if __name__ == "__main__":
-     app.run(host='0.0.0.0', port="7000")
+     app.run(host='0.0.0.0', port="5000")
