@@ -24,16 +24,32 @@ def cours_suites_numeriques():
 
 @app.route("/exercices/premiere/suites_numeriques")
 def exercices_suites_numeriques():
-    global answer_ex_1
-    answer_ex_1 = randint(1,6)
-    return render_template("exercices_suites_numériques.html", answer_ex_1 = answer_ex_1)
+    global suites_numeriques_answer_1, suites_numeriques_answer_2
+    suites_numeriques_answer_1, suites_numeriques_answer_2 = randint(1,6), randint(1,6)
+    return render_template("exercices_suites_numériques.html", 
+                           answer_ex_1 = suites_numeriques_answer_1, 
+                           answer_ex_2 = suites_numeriques_answer_2)
 
 @app.route('/exercices/premiere/suites_numeriques', methods=['POST'])
-def check_answers_1():
-    if int(request.form['answer_ex_1']) == answer_ex_1:
-        return 'Good answer !'
+def check_answers_2():
+    if request.form['answer_ex_1'] != "" and int(request.form['answer_ex_1']) == suites_numeriques_answer_1:
+        suites_numeriques_gb_answer_1 = "bel et bien"
     else:
-        return 'Wrong answer!'
+        suites_numeriques_gb_answer_1 = "cepedant"
+    if request.form['answer_ex_2'] != "":
+        if int(request.form['answer_ex_2']) == suites_numeriques_answer_2:
+            suites_numeriques_gb_answer_2 = "bel et bien"
+        else:
+            suites_numeriques_gb_answer_2 = "cepedant"
+    else:
+        suites_numeriques_gb_answer_2 = "ta pas répondu... triste"
+    return render_template("answers_exercices_suites_numeriques.html",
+                           gb_answer_ex_1 = suites_numeriques_gb_answer_1,
+                           gb_answer_ex_2 = suites_numeriques_gb_answer_2, 
+                           answer_ex_1 = suites_numeriques_answer_1, 
+                           answer_ex_2 = suites_numeriques_answer_2,
+                           sent_answer_ex_1 = int(request.form['answer_ex_1']),
+                           sent_answer_ex_2 = request.form['answer_ex_2'])
 
 #polynomes_second
 @app.route("/cours/premiere/polynomes_second")
@@ -66,4 +82,4 @@ def cours_fonction_exponentielle():
     return render_template("fonction_exponentielle.html")
 
 if __name__ == "__main__":
-     app.run(host='0.0.0.0')
+     app.run(host='0.0.0.0', port="7000")

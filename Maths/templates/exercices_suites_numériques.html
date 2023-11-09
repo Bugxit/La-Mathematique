@@ -4,13 +4,17 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='exercices.css') }}">
 </head>
 <body>
-<h2>Exercice 1 :</h2>
-<p>Quel est la raison de la suite Un ?</p>
-<p>Un+1 = Un + {{answer_ex_1}}</p>
-    <form method="POST">
-        <input name="answer_ex_1">
-        <input type="Submit">
-    </form>
+  <form method="POST">
+    <h2 class="red_subtitle">Exercice 1 :</h2>
+      <span class="text">Quel est la raison de la suite U<span class="annotation">n</span> ?
+      <br>U<span class="annotation">n+1</span> = U<span class="annotation">n</span> + {{answer_ex_1}}</span>
+    <br><input name="answer_ex_1">
+    <h2 class="red_subtitle">Exercice 2 :</h2>
+        <span class="text">Quel est la raison de la suite V<span class="annotation">n</span> ?
+          <br>V<span class="annotation">n+1</span> = V<span class="annotation">n</span> <span class="annotation">&#x2716;</span> {{answer_ex_2}}</span>
+    <br><input name="answer_ex_2">
+  <input type="Submit">
+  </form>
 </body>
 </html>
 

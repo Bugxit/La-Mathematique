@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='exercices.css') }}">
+</head>
+<body>
+    <h2 class="red_subtitle">Exercice 1 :</h2>
+      <span class="text">Quel est la raison de la suite U<span class="annotation">n</span> ?
+      <br>U<span class="annotation">n+1</span> = U<span class="annotation">n</span> + {{answer_ex_1}}</span>
+      <ul>
+        <li>Vous avez répondu {{sent_answer_ex_1}} à la deuxième question.</li>
+        <li>La bonne réponse à cette question était {{gb_answer_ex_1}} {{answer_ex_1}}.</li>
+      </ul>     
+    <h2 class="red_subtitle">Exercice 2 :</h2>
+      <span class="text">Quel est la raison de la suite V<span class="annotation">n</span> ?
+      <br>V<span class="annotation">n+1</span> = V<span class="annotation">n</span> <span class="annotation">&#x2716;</span> {{answer_ex_2}}</span>
+      <ul>
+        <li>Vous avez répondu {{sent_answer_ex_2}} à la deuxième question.</li>
+        <li>La bonne réponse à cette question était {{gb_answer_ex_2}} {{answer_ex_2}}.</li>
+      </ul>       
+</body>
+</html>
